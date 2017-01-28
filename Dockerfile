@@ -13,6 +13,8 @@ RUN apt-get update && \
 # Download and install jetty
 ENV JETTY_VERSION 9.3.14
 ENV RELEASE_DATE v20161028
+LABEL io.openshift.expose-services="8080:http"
+
 # http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.3.14.v20161028/jetty-distribution-9.3.14.v20161028.tar.gz
 RUN wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${JETTY_VERSION}.${RELEASE_DATE}/jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
     tar -xzvf jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
